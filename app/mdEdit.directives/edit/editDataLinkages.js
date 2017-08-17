@@ -14,7 +14,7 @@ angular.module('mdEdit.directives')
          * @return {[type]}         [description]
          */
         function(element, attrs) {
-            var templateUrl = attrs.editDataLinkagesTemplateurl;
+            var templateUrl = attrs.templateUrl;
             return templateUrl !== undefined ? templateUrl : baseTemplateUrl + '/editDataLinkages.html';
         });
 

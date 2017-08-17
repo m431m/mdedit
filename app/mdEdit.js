@@ -19,22 +19,30 @@ angular.module('mdEdit')
 
 function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, BroadcastSrv) {
 
-    // Config file URL
-    var config_file = 'config/config.json';
+	// Config file URL
+	// var config_file = 'config/config.json';
 
-    getConfig(config_file);
+	// getConfig(config_file);
 
-    // Get config data from config_file
-    function getConfig(config_file) {
-        configSrv.getFile(config_file)
-            .then(function(data) {
-                AppDataSrv.config = data;
-                getLocales(AppDataSrv.config.locales_path);
-                AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
-                getLocale(AppDataSrv.userLanguage);
-                getViews(AppDataSrv.userLanguage);
-            });
-    }
+	// AppDataSrv.config_data = config_data;
+
+	// Get data from config
+	function getData(data) {
+		AppDataSrv.config = data;
+		AppDataSrv.static_url = AppDataSrv.config.static_url;
+		getLocales(AppDataSrv.config.locales_path);
+		AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
+		getLocale(AppDataSrv.userLanguage);
+		getViews(AppDataSrv.userLanguage);
+
+	};
+
+	getData(config);
+
+	// Get config data from config_file
+	// function getConfig(config_file) {
+	// 	configSrv.getFile(config_file).then(getData);
+	// }
 
     // Get locales list from translate service
     function getLocales(localesPath) {

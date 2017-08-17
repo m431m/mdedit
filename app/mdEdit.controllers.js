@@ -3,8 +3,14 @@
  * @param  {[type]} 'mdEdit' [description]
  * @return {[type]}          [description]
  */
+
 angular.module('mdEdit')
-    .controller('mdEditCtrl', mdEditCtrl);
+	.config(function($interpolateProvider) {
+		$interpolateProvider.startSymbol('~{');
+		$interpolateProvider.endSymbol('}~');
+	})
+	.controller('mdEditCtrl', mdEditCtrl)
+
 mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv', 'xmlSrv'];
 
 function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, modalSetXmlSrv, modalGetXmlSrv, xmlSrv) {
@@ -21,7 +27,7 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
 
 
     function loadPage() {
-        
+
         xmlSrv.getListXml(function(data) {
             vm.data.xmlfiles = data.files;
             vm.data.sec = {
@@ -33,7 +39,7 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
                 roles: data.sec_roles
             };
         });
-        
+
         vm.clearSearch = function() {
             vm.fieldSearch = '';
         };
@@ -47,7 +53,7 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
             var url = PermalinkSrv.get();
             $window.location.href = url;
         };
-        
+
         vm.getListXml = function() {
             viewsSrv.changeView(3);
         };
