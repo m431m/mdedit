@@ -35,7 +35,7 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
             console.log('modalGetXMLSrv.getFileUrl() error.');
         });
     }
-    
+
     function uploadXml(filename, callback) {
         return $http({
             method: 'GET',
@@ -56,7 +56,7 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
             animation: true,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'app/modalGetXml.module/partials/modal-download.html',
+            templateUrl: AppDataSrv.config.modal_template.download ? AppDataSrv.config.modal_template.download : 'app/modalGetXml.module/partials/modal-download.html',
             controller: 'modalGetXmlCtrl as modal',
             size: 'lg',
             resolve: {

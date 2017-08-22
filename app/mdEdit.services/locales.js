@@ -52,14 +52,18 @@ function localesSrv($http, $location) {
     }
 
     function getLocales(locales_path) {
-        return $http
-            .get(locales_path + '/locales.json')
-            .then(function(response) {
-                return response.data;
-            })
-            .catch(function(reason) {
-                console.log("Error: can't get locales list (reason: " + reason + ").");
-            });
+		if (Object.prototype.toString.call(locales_path) === '[object Object]') {
+			return callback(view, locales_path);
+		} else {
+			return $http
+                .get(locales_path + '/locales.json')
+                .then(function(response) {
+                    return response.data;
+                })
+                .catch(function(reason) {
+                    console.log("Error: can't get locales list (reason: " + reason + ").");
+                });
+		};
     }
 
 }

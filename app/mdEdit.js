@@ -34,7 +34,7 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
 		AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
 		getLocale(AppDataSrv.userLanguage);
 		getViews(AppDataSrv.userLanguage);
-
+		AppDataSrv.locales = data.locales;
 	};
 
 	getData(config);
@@ -46,10 +46,14 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
 
     // Get locales list from translate service
     function getLocales(localesPath) {
-        localesSrv.getLocales(localesPath)
-            .then(function(data) {
-                AppDataSrv.locales = data.locales;
-            });
+		if (Object.prototype.toString.call(localesPath) === '[object Object]') {
+			return localesPath;
+		} else {
+            localesSrv.getLocales(localesPath)
+                .then(function(data) {
+                    AppDataSrv.locales = data.locales;
+                });
+        };
     }
 
     // Get locales from translate service
@@ -65,36 +69,56 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
     // Get list of view from views service
     // Get locales from views service (get URL param or the first item of models list)
     function getViews(userLanguage) {
-        // viewsSrv.getList($rootScope.config.views_file, function(data) {
-        viewsSrv.getList(AppDataSrv.config.views_file, function(data) {
-                AppDataSrv.views = data;
-            })
-            .then(function() {
-                viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
-                    AppDataSrv.view = view;
-                    AppDataSrv.fields = data.fields;
+		if (Object.prototype.toString.call(AppDataSrv.config.views_file) === '[object Object]') {
+			AppDataSrv.views = AppDataSrv.config.views_file.list;
+			viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
+				AppDataSrv.view = view;
+				AppDataSrv.fields = data.fields;
+			});
+			getModels();
+		} else {
+            // viewsSrv.getList($rootScope.config.views_file, function(data) {
+            viewsSrv.getList(AppDataSrv.config.views_file, function(data) {
+                    AppDataSrv.views = data;
+                })
+                .then(function() {
+                    viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
+                        AppDataSrv.view = view;
+                        AppDataSrv.fields = data.fields;
+                    });
+                    getModels();
                 });
-                getModels();
-            });
+		};
     }
 
     // Get list of models from models service
     // Get model from models service (get URL param or the first item of models list)
     function getModels() {
-        modelsSrv.getList(AppDataSrv.config.models_file, function(data) {
-                AppDataSrv.models = data;
-            })
-            .then(function() {
-                // If 'xml' query parameters is defined, load XML else load model (from query parameter 'model' or default model)
-                if (xmlSrv.getXml()) {
-                    // Send configLoaded signal to start mdEdit controller
-                    BroadcastSrv.send('configLoaded');
-                } else {
-                    modelsSrv.getModel(AppDataSrv.models, false, function(model) {
+		if (Object.prototype.toString.call(AppDataSrv.config.models_file) === '[object Object]') {
+			AppDataSrv.models = AppDataSrv.config.models_file.list;
+			if (xmlSrv.getXml()) {
+				BroadcastSrv.send('configLoaded');
+			} else {
+				modelsSrv.getModel(AppDataSrv.models, false, function(model) {
+					BroadcastSrv.send('configLoaded');
+				});
+			};
+		} else {
+            modelsSrv.getList(AppDataSrv.config.models_file, function(data) {
+                    AppDataSrv.models = data;
+                })
+                .then(function() {
+                    // If 'xml' query parameters is defined, load XML else load model (from query parameter 'model' or default model)
+                    if (xmlSrv.getXml()) {
                         // Send configLoaded signal to start mdEdit controller
                         BroadcastSrv.send('configLoaded');
-                    });
-                }
-            });
+                    } else {
+                        modelsSrv.getModel(AppDataSrv.models, false, function(model) {
+                            // Send configLoaded signal to start mdEdit controller
+                            BroadcastSrv.send('configLoaded');
+                        });
+                    }
+                });
+		};
     }
 }
