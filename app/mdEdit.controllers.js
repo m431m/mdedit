@@ -22,6 +22,9 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
     BroadcastSrv.on('configLoaded', function() {
         AppDataSrv.pageLoaded = false;
         loadPage();
+		if (vm.xml) {
+			xmlSrv.loadXml(vm.xml);
+		};
         AppDataSrv.pageLoaded = true;
     });
 
@@ -58,8 +61,9 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
             viewsSrv.changeView(3);
         };
 
-        // Modal to get XML
-        vm.openModalGetXml = modalGetXmlSrv.openModalGetXml;
+		vm.getXml = function() {
+			return mdjsSrv.toXml(jsonConverterSrv.formToMdjs(AppDataSrv.metadata));
+		};
 
         // Modal to set XML
         vm.openModalSetXml = modalSetXmlSrv.openModalSetXml;

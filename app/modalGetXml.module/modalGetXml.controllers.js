@@ -24,7 +24,7 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
     vm.downloadXML = downloadXML;
 
     vm.downloadJSON = downloadJSON;
-    
+
     vm.uploadXml = uploadXml;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
         //window.open('data:text/json,' + encodeURIComponent(vm.md.xml));
         //$uibModalInstance.close();
     }
-    
+
     function uploadXml(filename) {
         modalGetXmlSrv.uploadXml(filename, function(response) {
             alert(response.data.msg);

@@ -7,9 +7,9 @@
 angular.module('modalGetXml.services')
     .factory('modalGetXmlSrv', modalGetXmlSrv);
 
-modalGetXmlSrv.$inject = ['$http', 'AppDataSrv', '$uibModal'];
+modalGetXmlSrv.$inject = ['$http', 'AppDataSrv', '$uibModal', 'mdjsSrv', 'jsonConverterSrv'];
 
-function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
+function modalGetXmlSrv($http, AppDataSrv, $uibModal, mdjsSrv, jsonConverterSrv) {
 
     var modalGetXmlSrv = {
         getFileUrl: getFileUrl,
