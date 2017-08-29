@@ -22,8 +22,13 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
     BroadcastSrv.on('configLoaded', function() {
         AppDataSrv.pageLoaded = false;
         loadPage();
-		if (vm.xml) {
-			xmlSrv.loadXml(vm.xml);
+		if (vm.record) {
+			if (typeof(vm.record) === 'object') {
+				xmlSrv.loadJson(vm.record);
+			};
+			if (typeof(vm.record) === 'string') {
+				xmlSrv.loadXml(vm.record);
+			};
 		};
         AppDataSrv.pageLoaded = true;
     });
