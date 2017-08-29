@@ -52,10 +52,10 @@ function localesSrv($http, $location) {
     }
 
     function getLocales(locales_path) {
-		if (Object.prototype.toString.call(locales_path) === '[object Object]') {
-			return callback(view, locales_path);
-		} else {
-			return $http
+        if (Object.prototype.toString.call(locales_path) === '[object Object]') {
+            return callback(view, locales_path);
+        } else {
+            return $http
                 .get(locales_path + '/locales.json')
                 .then(function(response) {
                     return response.data;
@@ -63,7 +63,7 @@ function localesSrv($http, $location) {
                 .catch(function(reason) {
                     console.log("Error: can't get locales list (reason: " + reason + ").");
                 });
-		};
+        };
     }
 
 }

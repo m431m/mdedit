@@ -14,31 +14,31 @@ xmlSrv.$inject = ['$http', '$location', 'jsonConverterSrv', 'mdjsSrv', 'AppDataS
 function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
 
     var xmlSrv = {
-        getFile: getFile,
+        // getFile: getFile,
         getXml: getXml,
         loadXml: loadXml,
-		loadJson: loadJson,
-        getListXml: getListXml
+        loadJson: loadJson,
+        // getListXml: getListXml
     };
 
     return xmlSrv;
 
     ////////////////////////////////////////////////////////////////////////
 
-    function getFile(url, callback) {
-        AppDataSrv.xml_url = url;
-        return $http({
-                method: 'GET',
-                url: AppDataSrv.config.server_url_geturl+"&url="+url,
-                dataType: 'xml'
-            })
-            .success(function(data) {
-                callback(data);
-            })
-            .error(function(data, status) {
-                console.log("Error: can't get " + url + " file (status: " + status + ").");
-            });
-    }
+    // function getFile(url, callback) {
+    //     AppDataSrv.xml_url = url;
+    //     return $http({
+    //             method: 'GET',
+    //             url: AppDataSrv.config.server_url_geturl+"&url="+url,
+    //             dataType: 'xml'
+    //         })
+    //         .success(function(data) {
+    //             callback(data);
+    //         })
+    //         .error(function(data, status) {
+    //             console.log("Error: can't get " + url + " file (status: " + status + ").");
+    //         });
+    // }
 
     function getXml() {
         var xmlParam = $location.search().xml;
@@ -53,28 +53,26 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
 
     function loadXml(xml) {
         var data = angular.copy(mdjsSrv.toJson(xml));
-		console.log(JSON.stringify(data))
         // data = mdjsSrv.toJson(xml);
         AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
     }
 
-	function loadJson(data) {
-		console.log(data)
-		AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
-	}
-
-    function getListXml(callback) {
-        return $http({
-                method: 'GET',
-                url: AppDataSrv.config.server_url_getlistxml,
-                dataType: 'json'
-            })
-            .success(function(data) {
-                callback(data);
-            })
-            .error(function(data, status) {
-                console.log("Error: can't get " + org + " XML files list (status: " + status + ").");
-            });
+    function loadJson(data) {
+        AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
     }
+
+    // function getListXml(callback) {
+    //     return $http({
+    //             method: 'GET',
+    //             url: AppDataSrv.config.server_url_getlistxml,
+    //             dataType: 'json'
+    //         })
+    //         .success(function(data) {
+    //             callback(data);
+    //         })
+    //         .error(function(data, status) {
+    //             console.log("Error: can't get " + org + " XML files list (status: " + status + ").");
+    //         });
+    // }
 
 }

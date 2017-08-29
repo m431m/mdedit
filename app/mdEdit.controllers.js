@@ -5,15 +5,17 @@
  */
 
 angular.module('mdEdit')
-	.config(function($interpolateProvider) {
-		$interpolateProvider.startSymbol('~{');
-		$interpolateProvider.endSymbol('}~');
-	})
-	.controller('mdEditCtrl', mdEditCtrl)
+    .config(function($interpolateProvider) {
+        $interpolateProvider.startSymbol('~{');
+        $interpolateProvider.endSymbol('}~');
+    })
+    .controller('mdEditCtrl', mdEditCtrl)
 
-mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv', 'xmlSrv'];
+// mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv', 'xmlSrv'];
+mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'xmlSrv'];
 
-function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, modalSetXmlSrv, modalGetXmlSrv, xmlSrv) {
+// function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, modalSetXmlSrv, modalGetXmlSrv, xmlSrv) {
+function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, xmlSrv) {
 
     var vm = this;
 
@@ -22,37 +24,37 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
     BroadcastSrv.on('configLoaded', function() {
         AppDataSrv.pageLoaded = false;
         loadPage();
-		if (vm.record) {
-			if (typeof(vm.record) === 'object') {
-				xmlSrv.loadJson(vm.record);
-			};
-			if (typeof(vm.record) === 'string') {
-				xmlSrv.loadXml(vm.record);
-			};
-		};
+        if (vm.record) {
+            if (typeof(vm.record) === 'object') {
+                xmlSrv.loadJson(vm.record);
+            };
+            if (typeof(vm.record) === 'string') {
+                xmlSrv.loadXml(vm.record);
+            };
+        };
         AppDataSrv.pageLoaded = true;
     });
 
 
     function loadPage() {
 
-        xmlSrv.getListXml(function(data) {
-            vm.data.xmlfiles = data.files;
-            vm.data.sec = {
-                success: data.success,
-                editor: data.sec_editor,
-                username: data.sec_username,
-                email: data.sec_email,
-                org: data.sec_org,
-                roles: data.sec_roles
-            };
-        });
+        // xmlSrv.getListXml(function(data) {
+        //     vm.data.xmlfiles = data.files;
+        //     vm.data.sec = {
+        //         success: data.success,
+        //         editor: data.sec_editor,
+        //         username: data.sec_username,
+        //         email: data.sec_email,
+        //         org: data.sec_org,
+        //         roles: data.sec_roles
+        //     };
+        // });
 
         vm.clearSearch = function() {
             vm.fieldSearch = '';
         };
 
-        vm.data.template_url = AppDataSrv.views[AppDataSrv.view-1].path;
+        vm.data.template_url = AppDataSrv.views[AppDataSrv.view - 1].path;
         vm.changeView = function(view) {
             viewsSrv.changeView(view);
         };
@@ -66,12 +68,12 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
             viewsSrv.changeView(3);
         };
 
-		vm.getXml = function() {
-			return mdjsSrv.toXml(jsonConverterSrv.formToMdjs(AppDataSrv.metadata));
-		};
+        vm.getXml = function() {
+            return mdjsSrv.toXml(jsonConverterSrv.formToMdjs(AppDataSrv.metadata));
+        };
 
         // Modal to set XML
-        vm.openModalSetXml = modalSetXmlSrv.openModalSetXml;
+        // vm.openModalSetXml = modalSetXmlSrv.openModalSetXml;
 
         // Modal to show documentation
         vm.openModalDoc = modalDocSrv.openModalDoc;

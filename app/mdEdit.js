@@ -6,7 +6,8 @@ angular.module('mdEdit.services', []);
 angular.module('mdEdit.filters', []);
 angular.module('mdEdit.directives', []);
 // Déclaration du module mdEdit
-angular.module('mdEdit', ['ui.bootstrap', 'mdEdit.services', 'mdEdit.directives', 'mdEdit.filters', 'modalDoc', 'modalSetXml', 'modalGetXml']);
+// angular.module('mdEdit', ['ui.bootstrap', 'mdEdit.services', 'mdEdit.directives', 'mdEdit.filters', 'modalDoc', 'modalSetXml', 'modalGetXml']);
+angular.module('mdEdit', ['ui.bootstrap', 'mdEdit.services', 'mdEdit.directives', 'mdEdit.filters', 'modalDoc']);
 
 angular.module('mdEdit.directives')
     .config(function($locationProvider) {
@@ -19,36 +20,24 @@ angular.module('mdEdit')
 
 function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, BroadcastSrv) {
 
-	// Config file URL
-	// var config_file = 'config/config.json';
+    // Get data from config
+    function getData(data) {
+        AppDataSrv.config = data;
+        AppDataSrv.static_url = AppDataSrv.config.static_url;
+        getLocales(AppDataSrv.config.locales_path);
+        AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
+        getLocale(AppDataSrv.userLanguage);
+        getViews(AppDataSrv.userLanguage);
+        AppDataSrv.locales = data.locales;
+    };
 
-	// getConfig(config_file);
-
-	// AppDataSrv.config_data = config_data;
-
-	// Get data from config
-	function getData(data) {
-		AppDataSrv.config = data;
-		AppDataSrv.static_url = AppDataSrv.config.static_url;
-		getLocales(AppDataSrv.config.locales_path);
-		AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
-		getLocale(AppDataSrv.userLanguage);
-		getViews(AppDataSrv.userLanguage);
-		AppDataSrv.locales = data.locales;
-	};
-
-	getData(config);
-
-	// Get config data from config_file
-	// function getConfig(config_file) {
-	// 	configSrv.getFile(config_file).then(getData);
-	// }
+    getData(config);
 
     // Get locales list from translate service
     function getLocales(localesPath) {
-		if (Object.prototype.toString.call(localesPath) === '[object Object]') {
-			return localesPath;
-		} else {
+        if (Object.prototype.toString.call(localesPath) === '[object Object]') {
+            return localesPath;
+        } else {
             localesSrv.getLocales(localesPath)
                 .then(function(data) {
                     AppDataSrv.locales = data.locales;
@@ -69,15 +58,14 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
     // Get list of view from views service
     // Get locales from views service (get URL param or the first item of models list)
     function getViews(userLanguage) {
-		if (Object.prototype.toString.call(AppDataSrv.config.views_file) === '[object Object]') {
-			AppDataSrv.views = AppDataSrv.config.views_file.list;
-			viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
-				AppDataSrv.view = view;
-				AppDataSrv.fields = data.fields;
-			});
-			getModels();
-		} else {
-            // viewsSrv.getList($rootScope.config.views_file, function(data) {
+        if (Object.prototype.toString.call(AppDataSrv.config.views_file) === '[object Object]') {
+            AppDataSrv.views = AppDataSrv.config.views_file.list;
+            viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
+                AppDataSrv.view = view;
+                AppDataSrv.fields = data.fields;
+            });
+            getModels();
+        } else {
             viewsSrv.getList(AppDataSrv.config.views_file, function(data) {
                     AppDataSrv.views = data;
                 })
@@ -88,22 +76,22 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
                     });
                     getModels();
                 });
-		};
+        };
     }
 
     // Get list of models from models service
     // Get model from models service (get URL param or the first item of models list)
     function getModels() {
-		if (Object.prototype.toString.call(AppDataSrv.config.models_file) === '[object Object]') {
-			AppDataSrv.models = AppDataSrv.config.models_file.list;
-			if (xmlSrv.getXml()) {
-				BroadcastSrv.send('configLoaded');
-			} else {
-				modelsSrv.getModel(AppDataSrv.models, false, function(model) {
-					BroadcastSrv.send('configLoaded');
-				});
-			};
-		} else {
+        if (Object.prototype.toString.call(AppDataSrv.config.models_file) === '[object Object]') {
+            AppDataSrv.models = AppDataSrv.config.models_file.list;
+            if (xmlSrv.getXml()) {
+                BroadcastSrv.send('configLoaded');
+            } else {
+                modelsSrv.getModel(AppDataSrv.models, false, function(model) {
+                    BroadcastSrv.send('configLoaded');
+                });
+            };
+        } else {
             modelsSrv.getList(AppDataSrv.config.models_file, function(data) {
                     AppDataSrv.models = data;
                 })
@@ -119,6 +107,6 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
                         });
                     }
                 });
-		};
+        };
     }
 }

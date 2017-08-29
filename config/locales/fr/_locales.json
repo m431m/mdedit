@@ -88,8 +88,8 @@
                 "deliveryPoints": {
                     "id": "deliveryPoints",
                     "label": "Addresse",
-                    "placeholder": "Addresse",
-                    "description": "Addresse du contact.",
+                    "placeholder": "Adresse",
+                    "description": "Adresse du contact.",
                     "_keywords": "adresse, contact, métadonnées"
                 },
                 "postalCode": {
@@ -445,8 +445,8 @@
                 "deliveryPoints": {
                     "id": "deliveryPoints",
                     "label": "Addresse",
-                    "placeholder": "Addresse",
-                    "description": "Addresse du contact.",
+                    "placeholder": "Adresse",
+                    "description": "Adresse du contact.",
                     "_keywords": "adresse, contact, données"
                 },
                 "postalCode": {
