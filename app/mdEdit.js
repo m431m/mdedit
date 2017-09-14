@@ -23,7 +23,6 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
     // Get data from config
     function getData(data) {
         AppDataSrv.config = data;
-        AppDataSrv.static_url = AppDataSrv.config.static_url;
         getLocales(AppDataSrv.config.locales_path);
         AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
         getLocale(AppDataSrv.userLanguage);

@@ -555,7 +555,7 @@
         "dataSpatialRepresentationType": {
             "id": "dataSpatialRepresentationType",
             "label": "Type de données",
-            "placeholder": "ex.: vecteurs",
+            "placeholder": "Sélectionnez un type de données",
             "description": "Type de données: vecteur ou raster (image).",
             "_keywords": "type, vecteur, raster, données"
         },
@@ -690,7 +690,7 @@
         },
         "dataLegalAccessInspireConstraints": {
             "id": "dataLegalAccessInspireConstraints",
-            "label": "Contraintes d'accès liées à Inspire",
+            "label": "Restrictions d'accès public",
             "placeholder": "",
             "description": "Contraintes légales d'accès des données liées à Inspire.",
             "_keywords": "contraintes, légales, inspire, données",

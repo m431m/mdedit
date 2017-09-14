@@ -1,10 +1,10 @@
 {
     "mentions": "config/locales/fr/help/mentions.md",
     "help": "documentation/userGuide/mdEdit_UserDocumentation.md",
-    
+
     "default": "config/locales/fr/help/default.md",
     "empty": "config/locales/fr/help/empty.md",
-    
+
     "mdCharacterSet": "config/locales/fr/help/mdCharacterSet.md",
     "mdCharacterSet": "config/locales/fr/help/mdCharacterSet.md",
     "mdDateStamp": "config/locales/fr/help/mdDateStamp.md",
@@ -13,7 +13,7 @@
     "mdLanguage": "config/locales/fr/help/mdLanguage.md",
     "mdStandardName": "config/locales/fr/help/mdStandardName.md",
     "mdStandardVersion": "config/locales/fr/help/mdStandardName.md",
-    
+
     "contacts": "config/locales/fr/help/contacts.md",
     "deliveryPoint": "config/locales/fr/help/deliveryPoint.md",
     "city": "config/locales/fr/help/city.md",
@@ -25,7 +25,7 @@
     "positionName": "config/locales/fr/help/positionName.md",
     "role": "config/locales/fr/help/role.md",
     "phoneVoice": "config/locales/fr/help/phoneVoice.md",
-    
+
     "dataTitle": "config/locales/fr/help/dataTitle.md",
     "dataAbstract": "config/locales/fr/help/dataAbstract.md",
     "dataPointsOfContacts": "config/locales/fr/help/dataPointsOfContacts.md",
