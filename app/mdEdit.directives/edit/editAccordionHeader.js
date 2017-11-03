@@ -13,7 +13,7 @@ angular.module('mdEdit.directives').value('editAccordionHeaderTemplateurl',
      * @return {[type]}         [description]
      */
     function(element, attrs) {
-        var templateUrl = attrs.editAccordionHeaderTemplateurl;
+        var templateUrl = attrs.templateUrl;
         return templateUrl !== undefined ? templateUrl : baseTemplateUrl + '/editAccordionHeader.html';
     });
 
