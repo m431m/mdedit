@@ -7,9 +7,9 @@
 angular.module('modalGetXml.services')
     .factory('modalGetXmlSrv', modalGetXmlSrv);
 
-modalGetXmlSrv.$inject = ['$http', 'AppDataSrv', '$uibModal'];
+modalGetXmlSrv.$inject = ['$http', 'AppDataSrv', '$uibModal', 'mdjsSrv', 'jsonConverterSrv'];
 
-function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
+function modalGetXmlSrv($http, AppDataSrv, $uibModal, mdjsSrv, jsonConverterSrv) {
 
     var modalGetXmlSrv = {
         getFileUrl: getFileUrl,
@@ -56,7 +56,7 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
             animation: true,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'app/modalGetXml.module/partials/modal-download.html',
+            templateUrl: AppDataSrv.config.modal_template.download || 'app/modalGetXml.module/partials/modal-download.html',
             controller: 'modalGetXmlCtrl as modal',
             size: 'lg',
             resolve: {

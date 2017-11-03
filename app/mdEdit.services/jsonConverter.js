@@ -221,7 +221,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
         json.dataQualityInfo.push(dq);
 
-        console.log(json);
+        // console.log(json);
 
         return json;
     }
@@ -524,7 +524,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // Convert Inspire keywords to code value (english) => utiliser la langue de la fiche pour décoder la valeur... ou le français par défaut
         json.dataInspireKeywords = checkValuesSrv.translateValues(json.dataInspireKeywords, AppDataSrv.codelists.MD_InspireTopicCategoryCode);
         AppDataSrv.metadata = json;
-        console.log(json);
+        // console.log(json);
         return json;
     }
 }

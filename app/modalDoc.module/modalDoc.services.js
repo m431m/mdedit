@@ -6,9 +6,9 @@
 angular.module('modalDoc.services')
     .factory('modalDocSrv', modalDocSrv);
 
-modalDocSrv.$inject = ['$http', '$uibModal'];
+modalDocSrv.$inject = ['$http', '$uibModal', 'AppDataSrv'];
 
-function modalDocSrv($http, $uibModal) {
+function modalDocSrv($http, $uibModal, AppDataSrv) {
 
     var modalDocSrv = {
         getDoc: getDoc,
@@ -21,11 +21,11 @@ function modalDocSrv($http, $uibModal) {
 
     function getDoc(lg, field) {
         field = field || "default";
-        var help_file = 'config/locales/' + lg + '/help.json';
+        var help_file = AppDataSrv.config.locales_path + lg + '/help.json';
         return $http
             .get(help_file)
             .then(function(help) {
-                path = help.data[field] || 'config/locales/' + lg + '/help/' + field + '.md';
+                var path = help.data[field] || AppDataSrv.config.locales_path + lg + '/help/' + field + '.md';
                 return $http.get(path)
                     .then(function(response) {
                         // Change path for images in documentation
@@ -44,7 +44,7 @@ function modalDocSrv($http, $uibModal) {
             animation: true,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'app/modalDoc.module/partials/modal-doc.html',
+            templateUrl: AppDataSrv.config.modal_template.help || 'app/modalDoc.module/partials/modal-doc.html',
             controller: 'ModalDocCtrl as modal',
             size: 'lg',
             resolve: {
