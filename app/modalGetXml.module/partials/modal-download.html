@@ -10,13 +10,13 @@
             <!--<input type="hidden" class="" id="txt-note-id" name="txt-note-id" ng-model="note">-->
         </div>
         <ul ng-show="modal.errors">
-            <li ng-repeat="error in modal.errors" ng-if="modal.md_errors[error] != ''">[{{error}}] - {{modal.md_errors[error]}}</li>
+            <li ng-repeat="error in modal.errors" ng-if="modal.md_errors[error] != ''">[~{error}~] - ~{modal.md_errors[error]}~</li>
         </ul>
         <div ng-show="!modal.md.url">
-            {{modal.ui.modal_download.no_server}}
+            ~{modal.ui.modal_download.no_server}~
         </div>
         <div ng-show="modal.sec.editor">
-            Vous êtes connecté en tant que {{modal.sec.username}} ({{modal.sec.email}}) sur la plateforme. Vous pouvez envoyer directement le fichier XML ({{modal.md.filename}}.xml) dans votre dossier de métadonnées (metadata/{{modal.sec.org}}/{{modal.md.filename}}/).
+            Vous êtes connecté en tant que ~{modal.sec.username}~ (~{modal.sec.email}~) sur la plateforme. Vous pouvez envoyer directement le fichier XML (~{modal.md.filename}~.xml) dans votre dossier de métadonnées (metadata/~{modal.sec.org}~/~{modal.md.filename}~/).
         </div>
     </div>
     <div class="modal-footer">
@@ -31,11 +31,11 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                <li><a href="php/index.php?act=downloadXML&url={{modal.md.url}}" target="_blank">Format XML</a></li>
-                <!-- <li ng-show="modal.sec.username"><a href="php/index.php?act=sendXML&filename={{modal.md.filename}}" target="_blank">Envoyer XML</a></li>
+                <li><a href="php/index.php?act=downloadXML&url=~{modal.md.url}~" target="_blank">Format XML</a></li>
+                <!-- <li ng-show="modal.sec.username"><a href="php/index.php?act=sendXML&filename=~{modal.md.filename}~" target="_blank">Envoyer XML</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="disabled"><a href="php/index.php?act=downloadJSON&url={{modal.md.url}}" target="_blank">Format JSON</a></li>
-                <li class="disabled"><a href="php/index.php?act=downloadXLSX&url={{modal.md.url}}" target="_blank">Format XLSX</a></li> -->
+                <li class="disabled"><a href="php/index.php?act=downloadJSON&url=~{modal.md.url}~" target="_blank">Format JSON</a></li>
+                <li class="disabled"><a href="php/index.php?act=downloadXLSX&url=~{modal.md.url}~" target="_blank">Format XLSX</a></li> -->
             </ul>
         </div>
         <div class="btn-group" uib-dropdown ng-hide="modal.md.url">

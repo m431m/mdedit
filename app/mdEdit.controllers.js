@@ -4,6 +4,10 @@
  * @return {[type]}          [description]
  */
 angular.module('mdEdit')
+    .config(function($interpolateProvider) {
+        $interpolateProvider.startSymbol('~{');
+        $interpolateProvider.endSymbol('}~');
+    })
     .controller('mdEditCtrl', mdEditCtrl);
 mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv', 'xmlSrv'];
 
