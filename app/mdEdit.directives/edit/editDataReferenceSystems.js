@@ -23,7 +23,7 @@ angular.module('mdEdit.directives')
  * @param  {[type]} mdeditDataReferenceSystemsTemplateurl [description]
  * @return {[type]}                            [description]
  */
-function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, AppDataSrv, modalDocSrv) {
+function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, extentsSrv, AppDataSrv, modalDocSrv) {
     return {
         restrict: 'EA',
         templateUrl: editDataReferenceSystemsTemplateurl,
@@ -107,4 +107,4 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
 angular.module('mdEdit.directives')
     .directive('editDataReferenceSystems', editDataReferenceSystemsDirective);
 
-editDataReferenceSystemsDirective.$inject = ['editDataReferenceSystemsTemplateurl', 'AppDataSrv', 'modalDocSrv'];
+editDataReferenceSystemsDirective.$inject = ['editDataReferenceSystemsTemplateurl', 'extentsSrv', 'AppDataSrv', 'modalDocSrv'];
