@@ -79,6 +79,7 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
 
             extentsSrv.getList(AppDataSrv.config.referencesystems_list)
               .then(function(data) {
+                  console.log(data);
                   scope.referenceSystems = data;
               });
             scope.onSelectReferenceSystem = function($item, $model, $label, $key) {
