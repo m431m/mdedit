@@ -57,7 +57,6 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 scope.help = attrs.field;
             }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            scope.list = AppDataSrv.codelists.MD_ReferenceSystemCode;
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {
@@ -77,6 +76,14 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                     }
                 }
             }
+
+            extentsSrv.getList(AppDataSrv.config.referencesystems_list)
+              .then(function(data) {
+                  scope.referenceSystems = data;
+              });
+            scope.onSelectReferenceSystem = function($item, $model, $label, $key) {
+                 AppDataSrv.metadata.dataReferenceSystems[$key] = $item;
+            };
 
             // Add / remove item
             scope.removeItem = function(item) {
