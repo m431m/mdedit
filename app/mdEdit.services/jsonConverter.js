@@ -191,6 +191,11 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // TODO: referenceSystems
+        if (json.dataReferenceSystems) {
+            // !!! m431m don't know what to do more
+            json.dataReferenceSystems = json.dataReferenceSystems;
+        }
+
         // TODO: distributionFormats
         // TODO: ressources
 
@@ -270,7 +275,9 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // dataReferenceSystems
-        json.dataReferenceSystems = checkValuesSrv.checkCodes(json.dataReferenceSystems, AppDataSrv.codelists.MD_ReferenceSystemCode, 'code');
+        // !!! m431m commented the line below because it crashes
+        // json.dataReferenceSystems = checkValuesSrv.checkCodes(json.dataReferenceSystems, AppDataSrv.codelists.MD_ReferenceSystemCode, 'code');
+
         // dataLegalAccessInspireConstraints / MD_InspireRestrictionCode
         json.dataLegalAccessInspireConstraints = checkValuesSrv.checkCodes(json.dataLegalAccessInspireConstraints, AppDataSrv.codelists.MD_InspireRestrictionCode);
 

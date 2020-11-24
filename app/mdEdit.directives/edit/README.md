@@ -36,7 +36,7 @@ Directive pour la gestion des liens vers des ressources externes.
 
 ## ``editDataReferenceSystems.js``
 
-Directive pour la gestion des systèmes de projection.
+Directive pour la gestion des systèmes de coordonnées.
 
 ## ``editDataTemporalExtents.js``
 

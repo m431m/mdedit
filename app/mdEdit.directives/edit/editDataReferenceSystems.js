@@ -69,7 +69,9 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 scope[p] = AppDataSrv.fields[scope.field][p];
                 for (var j = 0; j < params.length; j++) {
                     param = params[j];
-                    if (!scope.hasOwnProperty(param)) { scope[param] = {}; }
+                    if (!scope.hasOwnProperty(param)) {
+                      scope[param] = {};
+                    }
                     scope[param][p] = AppDataSrv.fields[scope.field].children[param][p];
                     if (attrs[param+'_'+p] || attrs[param+'_'+p] === '') {
                         scope[param][p] = attrs[param+'_'+p];
@@ -79,12 +81,8 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
 
             extentsSrv.getList(AppDataSrv.config.referencesystems_list)
               .then(function(data) {
-                  console.log(data);
                   scope.referenceSystems = data;
               });
-            scope.onSelectReferenceSystem = function($item, $model, $label, $key) {
-                 AppDataSrv.metadata.dataReferenceSystems[$key] = $item;
-            };
 
             // Add / remove item
             scope.removeItem = function(item) {
@@ -96,6 +94,7 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 }
                 AppDataSrv.metadata[attrs.field].push(mdjs.empty_json.referencesystem);
             };
+
         }
     }
 }

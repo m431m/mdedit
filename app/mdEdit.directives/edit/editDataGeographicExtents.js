@@ -95,6 +95,7 @@ function editDataGeographicExtentsDirective(editDataGeographicExtentsTemplateurl
                 }
                 AppDataSrv.metadata[scope.field].push(angular.copy(mdjs.empty_json.geographicextent));
             };
+
         }
     }
 }
