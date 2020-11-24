@@ -275,8 +275,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // dataReferenceSystems
-        // !!! m431m commented the line below because it crashes
-        // json.dataReferenceSystems = checkValuesSrv.checkCodes(json.dataReferenceSystems, AppDataSrv.codelists.MD_ReferenceSystemCode, 'code');
+        json.dataReferenceSystems = checkValuesSrv.checkCodes(json.dataReferenceSystems, AppDataSrv.codelists.MD_ReferenceSystemCode, 'code');
 
         // dataLegalAccessInspireConstraints / MD_InspireRestrictionCode
         json.dataLegalAccessInspireConstraints = checkValuesSrv.checkCodes(json.dataLegalAccessInspireConstraints, AppDataSrv.codelists.MD_InspireRestrictionCode);
