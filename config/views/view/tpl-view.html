@@ -348,7 +348,7 @@
                     <span ng-if="vm.data.metadata.dataReferenceSystems">
                             <span ng-repeat="dataReferenceSystem in vm.data.metadata.dataReferenceSystems track by $index">
                                 <a class="btn btn-xs btn-info" >
-                                    <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                                    <i class="glyphicon glyphicon-globe" title="Système de coordonnées"> </i>
                                 </a>
                                 ~{dataReferenceSystem.code | translateCode:'MD_ReferenceSystemCode'}~
                                 <span ng-if="dataReferenceSystem.codespace">
@@ -359,9 +359,9 @@
                     </span>
                     <span ng-if="!vm.data.metadata.dataReferenceSystems">
                             <a class="btn btn-xs btn-info" >
-                                <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                                <i class="glyphicon glyphicon-globe" title="Système de coordonnées"> </i>
                             </a>
-                            Aucun système de projection défini.
+                            Aucun système de coordonnées défini.
                         </span>
                 </p>
 

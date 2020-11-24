@@ -67,12 +67,12 @@ Pour chaque champ descriptif de la fiche, une aide est disponible en cliquant su
 Code permettant d’identifier de manière unique la fiche de description de la donnée.  
 Ce code n’est jamais modifié pour une fiche même lors de sa mise à jour.
 
-S'il n'est pas renseigné, cet identifiant est généré automatiquement par mdEdit sous la forme d'un code unique pseudo aléatoire. 
+S'il n'est pas renseigné, cet identifiant est généré automatiquement par mdEdit sous la forme d'un code unique pseudo aléatoire.
 ## Recommandations
 
 Afin d’obtenir un code unique, il existe 2 possibilités:
   - Construire cet identifiant en associant le code pays de l’organisme propriétaire de la donnée, son numéro SIREN, ainsi qu’un code unique définit par le propriétaire de la donnée (ex.: FR–#00019–1#3_004).
-  - Utiliser une URI, c'est à dire une adresse internet (URL) composée du nom de domaine du site internet de l'organisme propriétaire des données suivi d'un identifiant (ex.: http://www.cigalsace.org/FR–#00019–1#3_004). Cette adresse ne dit pas obligatoirement pointée vers une ressource particulière. 
+  - Utiliser une URI, c'est à dire une adresse internet (URL) composée du nom de domaine du site internet de l'organisme propriétaire des données suivi d'un identifiant (ex.: http://www.cigalsace.org/FR–#00019–1#3_004). Cette adresse ne dit pas obligatoirement pointée vers une ressource particulière.
 
 **Structure recommandée de l’identifiant :**
 
@@ -154,7 +154,7 @@ Jeu de caractères de la fiche : « 8859part1 »
 Cet élément de métadonnées renseigne le type de ressource décrit dans la fiche.  
 La directive européenne INSPIRE concerne 3 types de ressource :
 
-1. Les « séries de données géographiques » ou « jeu de données géographiques » correspondant à une compilation/ensemble identifiable et cohérent de données géographiques selon un thème dominant. Il peut s’agir d’une couche d’information ou d’un ensemble de couches (base de données géographique). 
+1. Les « séries de données géographiques » ou « jeu de données géographiques » correspondant à une compilation/ensemble identifiable et cohérent de données géographiques selon un thème dominant. Il peut s’agir d’une couche d’information ou d’un ensemble de couches (base de données géographique).
 2. Les « ensembles de séries de données géographiques » correspondant à une compilation de séries de données géographiques partageant la même spécification de produit. Par exemple, la BdOCS2000-CIGAL et la BdOCS2008-CIGAL forment un ensemble de jeux de données géographiques.
 3. Les services de données géographiques.
 
@@ -185,7 +185,7 @@ Ce groupe de champs permet de connaître la personne ou l’organisme qui a déc
 Il se compose :
 
 - du Nom/Prénom,
-- de la Fonction, 
+- de la Fonction,
 - du Nom de l’organisme,
 - de l’Adresse,
 - du Code postal,
@@ -212,7 +212,7 @@ Il est recommandé de saisir l’ensemble des informations descriptives du conta
 - La fonction du contact, en précisant si nécessaire la direction ou le service dont il dépend
 - L’organisme en toute lettre (éviter les signes non explicités)
 - L’adresse e-mail de la personne à contacter
-- Le rôle, indispensable avec comme valeur par défaut « Point de contact » 
+- Le rôle, indispensable avec comme valeur par défaut « Point de contact »
 
 ## Exemples
 
@@ -403,13 +403,13 @@ Le résumé doit reprendre les éléments essentiels et caractéristiques de la 
 Voici quelques pistes qui peuvent servir d’aide à la saisie :
 Existe-il une définition de la donnée ? Si oui, elle peut être reprise dans le résumé.
 Quel est l’objectif du lot de données, pourquoi est-il produit/géré ?
-Des exemples d’usages de ces données géographiques ? 
+Des exemples d’usages de ces données géographiques ?
 A quelle(s) compétence(s) de la collectivité répond-il ?
-Combien de personnes gèrent le lot ? 
+Combien de personnes gèrent le lot ?
 Comment est organisé le cycle de vie de l’information ? Est-ce sous traité à un bureau d’étude ?
 Quel est le nombre de classes ?
 Quel est le volume total (nombre d’enregistrements) ?
-En moyenne quel est le volume mis à jour par jour/semaine/mois ou autre ? 
+En moyenne quel est le volume mis à jour par jour/semaine/mois ou autre ?
 
 ## Exemples
 
@@ -421,13 +421,13 @@ En moyenne quel est le volume mis à jour par jour/semaine/mois ou autre ?
 # Illustration de la donnée
 
 ## Définition
-Ce champ fourni un lien vers une image représentant la donnée (principalement le lot de donnée). 
+Ce champ fourni un lien vers une image représentant la donnée (principalement le lot de donnée).
 Il peut s’agir d’une représentation de la donnée ou d’une carte basée sur cette donnée. La carte ou la couche de données doit être clairement mise en évidence sur l’image créée par une sémiologie graphique adaptée.
 
 ## Recommandations
 Les caractéristiques de l’image ne sont pas imposées, cependant, il faut veiller à :
 Fournir une image lisible et représentative de la donnée décrite.
-Fournir une image de taille et de poids raisonnable, adaptée aux données représentées (ex. : 300 x 300px à 96dpi pour 50 à 200ko). 
+Fournir une image de taille et de poids raisonnable, adaptée aux données représentées (ex. : 300 x 300px à 96dpi pour 50 à 200ko).
 Privilégier un format standard, adapté à une représentation sur internet (ex. : jpg, png, etc) et éviter les format non compressés ou spécifiques à une utilisation (ecw, geoTif, etc.)
 
 Il est recommandé de donner à l’image le même nom que le fichier de métadonnées. Un suffixe précisant le numéro d’ordre peut être ajouté lorsque plusieurs illustrations sont mises à disposition : « NomFiche-1.jpg », « NomFiche-2.jpg », etc.
@@ -680,7 +680,7 @@ Catégorie internationale : « Localisant »
 
 # Classification européenne INSPIRE
 #1. Définition
-Ce champ permet de classer la donnée dans un ou plusieurs thèmes d’une liste fermée de valeurs définis au niveau européen via la directive INSPIRE. Cette classification vise à faciliter la recherche de cette donnée. 
+Ce champ permet de classer la donnée dans un ou plusieurs thèmes d’une liste fermée de valeurs définis au niveau européen via la directive INSPIRE. Cette classification vise à faciliter la recherche de cette donnée.
 Il est important d’associer la donnée au(x) thème(s) le(s) plus pertinent parmi les 34 thèmes ci-après définis.
 
 La liste des valeurs proposées dans le cadre du partenariat CIGAL est celle définit par la directive européenne Inspire, s’appuyant sur le Thesaurus GEMET des thèmes Inspire et reprise dans le tableau suivant.
@@ -746,10 +746,10 @@ Santé et sécurité des personnes
 Répartition géographique des pathologies dominantes (allergies, cancers, maladies respiratoires, etc.) liées directement (pollution de l'air, produits chimiques, appauvrissement de la couche d'ozone, bruit, etc.) ou indirectement (alimentation, organismes génétiquement modifiés, etc.) à la qualité de l'environnement, et ensemble des informations relatif à l'effet de celle-ci sur la santé des hommes (marqueurs biologiques, déclin de la fertilité, épidémies) ou leur bien-être (fatigue, stress, etc.).
 19
 Services d'utilité publique et services publics
-Comprend les installations d'utilité publique, tels que les égouts ou les réseaux et installations liés à la gestion des déchets, à l'approvisionnement énergétique, à l'approvisionnement en eau, ainsi que les services administratifs et sociaux publics, tels que les administrations publiques, les sites de la protection civile, les écoles et les hôpitaux. 
+Comprend les installations d'utilité publique, tels que les égouts ou les réseaux et installations liés à la gestion des déchets, à l'approvisionnement énergétique, à l'approvisionnement en eau, ainsi que les services administratifs et sociaux publics, tels que les administrations publiques, les sites de la protection civile, les écoles et les hôpitaux.
 20
 Installations de suivi environnemental
-La situation et le fonctionnement des installations de suivi environnemental comprennent l'observation et la mesure des émissions, de l'état du milieu environnemental et d'autres paramètres de l'écosystème (biodiversité, conditions écologiques de la végétation, etc.) par les autorités publiques ou pour leur compte. 
+La situation et le fonctionnement des installations de suivi environnemental comprennent l'observation et la mesure des émissions, de l'état du milieu environnemental et d'autres paramètres de l'écosystème (biodiversité, conditions écologiques de la végétation, etc.) par les autorités publiques ou pour leur compte.
 21
 Lieux de production et sites industriels
 Sites de production industrielle, y compris les installations couvertes par la directive 96/61/CE du Conseil du 24 septembre 1996 relative à la prévention et à la réduction intégrées de la pollution et les installations de captage d'eau, d'extraction minière et de stockage.
@@ -767,12 +767,12 @@ Zones à risque naturel
 Zones sensibles caractérisées en fonction des risques naturels (tous les phénomènes atmosphériques, hydrologiques, sismiques, volcaniques, ainsi que les feux de friche qui peuvent, en raison de leur situation, de leur gravité et de leur fréquence, nuire gravement à la société), tels qu'inondations, glissements et affaissements de terrain, avalanches, incendies de forêts, tremblements de terre et éruptions volcaniques.
 26
 Conditions atmosphériques
-Conditions physiques dans l'atmosphère. Comprend les données géographiques fondées sur des mesures, sur des modèles ou sur une combinaison des deux, ainsi que les lieux de mesure. 
+Conditions physiques dans l'atmosphère. Comprend les données géographiques fondées sur des mesures, sur des modèles ou sur une combinaison des deux, ainsi que les lieux de mesure.
 27
-Caractéristiques géographiques météorologiques 
+Caractéristiques géographiques météorologiques
 Conditions météorologiques et leur mesure: précipitations, température, évapotranspiration, vitesse et direction du vent.
 28
-Caractéristiques géographiques océanographiques 
+Caractéristiques géographiques océanographiques
 Conditions physiques des océans (courants, salinité, hauteur des vagues, etc.).
 29
 Régions maritimes
@@ -813,7 +813,7 @@ Les mots-clés doivent être écrits en minuscule, accentués et au singulier.
 Leur choix doit répondre à quelques règles de bon sens pour faciliter la recherche par l’utilisateur final :
 Inutile de saisir un trop grand nombre de mots-clés : 3 à 10 mots-clés doivent généralement suffire.
 Privilégier les termes qui qualifient la donnée au détriment de ceux qui seront trop génériques comme « donnée géographique » ou « base de données ».
-Eviter de renseigner ici une information qui relève d’un autre champ, comme le système de projection, le format de diffusion ou la catégorie internationale.
+Eviter de renseigner ici une information qui relève d’un autre champ, comme le système de coordonnées, le format de diffusion ou la catégorie internationale.
 Saisir des mots susceptibles d’être recherchés par l’utilisateur final, c’est à dire utilisés dans le langage habituel. Par exemple, le terme « chemin » sera sans doute préférable à celui de « sente ». Cependant, dans certains cas, données techniques par exemple, des termes spécifiques peuvent être privilégiés.
 
 Lorsque les mots-clés sont issus d’un thésaurus, il est recommandé de préciser les informations sur le thésaurus (nom du thesaurus et la date de création, publication ou mise à jour) dans les champs correspondants.
@@ -838,7 +838,7 @@ Date de publication : « 13/07/2011 »
 Ce groupe de champs permet de connaître les personnes ou les organismes qui sont intervenus ou interviennent encore dans la vie de la donnée (production, mise à jour, diffusion, etc.).
 Chaque contact se compose de plusieurs informations :
 Nom/Prénom,
-Fonction, 
+Fonction,
 Nom de l’organisme,
 Adresse,
 Code postal,
@@ -864,7 +864,7 @@ Le nom du contact en majuscules et le prénom avec la première lettre en majusc
 La fonction du contact, en précisant si nécessaire la direction ou le service dont il dépend
 L’organisme en toute lettre (éviter les signes non explicités)
 L’adresse e-mail de la personne à contacter
-Le rôle, indispensable avec comme valeur par défaut « Point de contact » 
+Le rôle, indispensable avec comme valeur par défaut « Point de contact »
 
 ## Exemples
 
@@ -951,7 +951,7 @@ Le rôle, indispensable avec comme valeur par défaut « Point de contact »
 
 # Emprise
 ## Définition
-Ce champ permet d’indiquer l'emprise explorée où des informations ont été recueillies pour constituer la donnée. Ils s’agit d’un rectangle de délimitation intégrant la zone d’étude dans laquelle les données ont été identifiées et localisées. 
+Ce champ permet d’indiquer l'emprise explorée où des informations ont été recueillies pour constituer la donnée. Ils s’agit d’un rectangle de délimitation intégrant la zone d’étude dans laquelle les données ont été identifiées et localisées.
 
 Une emprise est ainsi constituée :
 D’un nom la qualifiant
@@ -961,7 +961,7 @@ De 4 coordonnées précisant les longitudes ouest et est et les latitudes sud et
 Dans le cas particulier où la donnée couvre plusieurs zones distinctes, il est possible de renseigner plusieurs emprises si celles-ci ne se superposent pas.
 
 L’emprise doit englober l’étendue du territoire pour lequel le producteur garantit la connaissance et la saisie de l’information fournie. L’absence vérifiée d’éléments sur un territoire constitue une information en soi, ainsi, le rectangle englobant peut parfois couvrir une zone bien plus large que l’emprise des données elles-mêmes.
-Cependant, dans un souci de qualité et de précision de la description de la donnée, le rectangle de délimitation doit être le plus ajusté possible, afin de délimiter le plus fidèlement possible la donnée décrite. 
+Cependant, dans un souci de qualité et de précision de la description de la donnée, le rectangle de délimitation doit être le plus ajusté possible, afin de délimiter le plus fidèlement possible la donnée décrite.
 ## Exemples
 
 <!--- End @data_geographicextents.html --->
@@ -969,10 +969,10 @@ Cependant, dans un souci de qualité et de précision de la description de la do
 ====
 <!--- Begin @data_referencesystems.html --->
 
-# Système de projection
+# Système de coordonnées
 ## Définition
-Information qui indique le ou les systèmes de projections dans lesquels sont disponibles la donnée décrite.
-La liste des systèmes de projection couramment utilisés en Alsace est la suivante :
+Information qui indique le ou les systèmes de coordonnées dans lesquels sont disponibles la donnée décrite.
+La liste des systèmes de coordonnées couramment utilisés en Alsace est la suivante :
 RGF93 – Lambert 93 (EPSG:#)
 RGF93 – Lambert 93 CC48 (EPSG:#)
 RGF93 – Lambert 93 CC49 (EPSG:#)
@@ -986,12 +986,12 @@ WGS84 – 3D (EPSG:4979)
 ## Recommandations
 Toutes les données échangeables devraient être disponibles au moins en projection Lambert 93. Pour l’Alsace, la projection locale Lambert 93 CC48 (zone 9) est privilégiée.
 
-Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage de la projection le cas échéant et son code EPSG.
+Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage du système de coordonnées le cas échéant et son code EPSG.
 
-Pour la France, la liste des systèmes de projection et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
+Pour la France, la liste des systèmes de coordonnées et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
 
 ## Exemples
-Système de projection : « RGF93 – Lambert 93 CC48 (EPSG:#) »
+Système de coordonnées : « RGF93 – Lambert 93 CC48 (EPSG:#) »
 
 <!--- End @data_referencesystems.html --->
 
@@ -1025,7 +1025,7 @@ Etendue temporelle : « 2011-08-24 » / « 2013-08-24 »
 
 # Type de représentation
 ## Définition
-Cette information permet de savoir s’il s’agit de données vecteur, raster, tabulaire, à maille triangulaire, 3D, etc. 
+Cette information permet de savoir s’il s’agit de données vecteur, raster, tabulaire, à maille triangulaire, 3D, etc.
 
 Parmi les valeurs possibles des type de représentations spatiales définies par la norme ISO 19115 (liste B.# MD_SpatialRepresentationTypeCode), pour faciliter la saisi dans le cadre du partenariat CIGAL, les valeurs proposées par défaut sont « Vecteur » et « Raster ».
 ## Recommandations
@@ -1051,7 +1051,7 @@ Type de représentation : « Vecteur ».
 Ce champ permet de spécifier l’échelle ou la résolution de la donnée.
 Il s’agit généralement de l’échelle optimum d’utilisation de la donnée pour réaliser des cartes ou des analyses spatiales.
 
-On choisit d’indiquer la résolution spatiale : 
+On choisit d’indiquer la résolution spatiale :
 soit en échelle de représentation ou échelle équivalente (principalement pour les représentations cartographiques),
 soit sous la forme d’une distance au sol, principalement pour les données maillées et des produits dérivés d’imagerie, représentant la résolution des données (typiquement la taille d’un pixel d’une image au sol).
 ## Recommandations
@@ -1098,7 +1098,7 @@ La précision positionnement planimétrique : indiquer des éléments complémen
 Le contrôle qualité : y-a-il un contrôle qualité des données ? Si oui, expliquer les règles générales de celui-ci et les résultats obtenus. Y-a-il des attributs qui informent de la qualité de l’objet (par exemple un code précision) ?
 Le mode de production : existe-il un cahier des charges ou un dossier de spécifications techniques ?
 Les limites techniques d’utilisation : vous pouvez avertir l’utilisateur des usages pour lesquels le jeu de données n’est pas adapté.
-La généalogie et l’historique de la donnée : texte libre qui retrace l'histoire des données en décrivant les principales phases de production, de contrôle et de correction de la base, en indiquant les données ayant permis cette fabrication (référentiels et données exogènes notamment). 
+La généalogie et l’historique de la donnée : texte libre qui retrace l'histoire des données en décrivant les principales phases de production, de contrôle et de correction de la base, en indiquant les données ayant permis cette fabrication (référentiels et données exogènes notamment).
 Pour les données 3D préciser l’étendue verticale et le système vertical de référence.
 Préciser les éléments d’étendu temporelle.
 
@@ -1215,10 +1215,10 @@ L12#I-1 du code de l’environnement (Directive 2007/2/CE (INSPIRE), Article 1#)
 La confidentialité des travaux des autorités publiques, lorsque cette confidentialité est prévue par la loi.
 2
 L124-5-II-1 du code de l’environnement (Directive 2007/2/CE (INSPIRE), Article1#)
-Les relations internationales, la sécurité publique ou la défense nationale. 
+Les relations internationales, la sécurité publique ou la défense nationale.
 3
 L124-5-II-2 du code de l’environnement (Directive 2007/2/CE (INSPIRE), Article 1#)
-La bonne marche de la justice, la possibilité pour toute personne d’être jugée équitablement ou la capacité d’une autorité publique d’effectuer une enquête d’ordre pénal ou disciplinaire. 
+La bonne marche de la justice, la possibilité pour toute personne d’être jugée équitablement ou la capacité d’une autorité publique d’effectuer une enquête d’ordre pénal ou disciplinaire.
 4
 L12#I-1 du code de l’environnement (Directive 2007/2/CE (INSPIRE), Article 1#)
 La confidentialité des informations commerciales ou industrielles, lorsque cette confidentialité est prévue par la législation nationale ou communautaire afin de protéger un intérêt économique légitime, notamment l’intérêt public lié à la préservation de la confidentialité des statistiques et du secret fiscal.
@@ -1286,7 +1286,7 @@ Si les conditions ne sont pas connues, indiquer « Conditions inconnues ».
 Il est recommandé de préciser les mentions légales et les sources à faire figurer sur les supports de diffusion utilisant les données concernées.
 
 ## Exemples
-Conditions d’utilisation et mentions légales : 
+Conditions d’utilisation et mentions légales :
 « Données disponibles pour les autorités publiques après adhésion au partenariat CIGAL »
 « Utilisation commerciale directe ou indirecte interdite »
 « Mention obligatoire sur tout support de diffusion : BdOCS2008-CIGAL – www.cigalsace.org »
@@ -1299,7 +1299,7 @@ Conditions d’utilisation et mentions légales :
 # Accès aux données et documents associés
 ## Définition
 Ce champ permet de lister les liens vers des données concernant la donnée. Il peut s’agir d’un lien de téléchargement de la donnée elle-même ou de tout document complémentaire et utile à une meilleure compréhension du lot de données (dossier de spécifications, acte d’engagement, tarifs, etc.).
-Ce lien (URL) doit être accompagné d’un nom et d’une description précisant la nature et le contenu de la donnée accessible. 
+Ce lien (URL) doit être accompagné d’un nom et d’une description précisant la nature et le contenu de la donnée accessible.
 ## Recommandations
 Il est recommandé d’utiliser des adresses URL complètes (pas de chemin relatif), publiques et pérennes.
 ## Exemples
@@ -1321,8 +1321,8 @@ Dans le cadre du partenariat CIGAL, 2 niveaux distincts de conformité sont dist
 La conformité aux règlements d’interopérabilité de la directive Inspire pour les données
 La conformité à d’autres spécifications sur lesquelles s’est appuyé le producteur de la donnée (COVADIS, CNIG, AFNOR, etc.).
 
-Le premier niveau dépend d’une liste fermée de valeurs. Si une classification européenne est renseignée (cf. paragraphe #, le degré de conformité au règlement d’interopérabilité qui s’y rattache doit être fourni. 
-Le second niveau n’est pas obligatoire et est rempli au libre choix de l’organisme décrivant les données. 
+Le premier niveau dépend d’une liste fermée de valeurs. Si une classification européenne est renseignée (cf. paragraphe #, le degré de conformité au règlement d’interopérabilité qui s’y rattache doit être fourni.
+Le second niveau n’est pas obligatoire et est rempli au libre choix de l’organisme décrivant les données.
 
 Dans les 2 cas, 4 informations sont attendues :
 Le nom de la spécification
