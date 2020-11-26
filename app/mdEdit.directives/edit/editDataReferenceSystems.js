@@ -23,7 +23,7 @@ angular.module('mdEdit.directives')
  * @param  {[type]} mdeditDataReferenceSystemsTemplateurl [description]
  * @return {[type]}                            [description]
  */
-function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, AppDataSrv, modalDocSrv) {
+function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, extentsSrv, AppDataSrv, modalDocSrv) {
     return {
         restrict: 'EA',
         templateUrl: editDataReferenceSystemsTemplateurl,
@@ -57,7 +57,6 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 scope.help = attrs.field;
             }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            scope.list = AppDataSrv.codelists.MD_ReferenceSystemCode;
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {
@@ -70,13 +69,20 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 scope[p] = AppDataSrv.fields[scope.field][p];
                 for (var j = 0; j < params.length; j++) {
                     param = params[j];
-                    if (!scope.hasOwnProperty(param)) { scope[param] = {}; }
+                    if (!scope.hasOwnProperty(param)) {
+                      scope[param] = {};
+                    }
                     scope[param][p] = AppDataSrv.fields[scope.field].children[param][p];
                     if (attrs[param+'_'+p] || attrs[param+'_'+p] === '') {
                         scope[param][p] = attrs[param+'_'+p];
                     }
                 }
             }
+
+            extentsSrv.getList(AppDataSrv.config.referencesystems_list)
+              .then(function(data) {
+                  scope.referenceSystems = data;
+              });
 
             // Add / remove item
             scope.removeItem = function(item) {
@@ -88,6 +94,7 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
                 }
                 AppDataSrv.metadata[attrs.field].push(mdjs.empty_json.referencesystem);
             };
+
         }
     }
 }
@@ -100,4 +107,4 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, 
 angular.module('mdEdit.directives')
     .directive('editDataReferenceSystems', editDataReferenceSystemsDirective);
 
-editDataReferenceSystemsDirective.$inject = ['editDataReferenceSystemsTemplateurl', 'AppDataSrv', 'modalDocSrv'];
+editDataReferenceSystemsDirective.$inject = ['editDataReferenceSystemsTemplateurl', 'extentsSrv', 'AppDataSrv', 'modalDocSrv'];

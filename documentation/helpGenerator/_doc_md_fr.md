@@ -811,7 +811,7 @@ Les mots-clés doivent être écrits en minuscule, accentués et au singulier.
 Leur choix doit répondre à quelques règles de bon sens pour faciliter la recherche par l’utilisateur final :
 Inutile de saisir un trop grand nombre de mots-clés : 3 à 10 mots-clés doivent généralement suffire.
 Privilégier les termes qui qualifient la donnée au détriment de ceux qui seront trop génériques comme « donnée géographique » ou « base de données ».
-Eviter de renseigner ici une information qui relève d’un autre champ, comme le système de projection, le format de diffusion ou la catégorie internationale.
+Eviter de renseigner ici une information qui relève d’un autre champ, comme le système de coordonnées, le format de diffusion ou la catégorie internationale.
 Saisir des mots susceptibles d’être recherchés par l’utilisateur final, c’est à dire utilisés dans le langage habituel. Par exemple, le terme « chemin » sera sans doute préférable à celui de « sente ». Cependant, dans certains cas, données techniques par exemple, des termes spécifiques peuvent être privilégiés.
 
 Lorsque les mots-clés sont issus d’un thésaurus, il est recommandé de préciser les informations sur le thésaurus (nom du thesaurus et la date de création, publication ou mise à jour) dans les champs correspondants.
@@ -967,10 +967,10 @@ Cependant, dans un souci de qualité et de précision de la description de la do
 ====
 <!-- Begin @data_referencesystems.md -->
 
-# Système de projection
+# Système de coordonnées
 ## Définition
-Information qui indique le ou les systèmes de projections dans lesquels sont disponibles la donnée décrite.
-La liste des systèmes de projection couramment utilisés en Alsace est la suivante :
+Information qui indique le ou les systèmes de coordonnées dans lesquels sont disponibles la donnée décrite.
+La liste des systèmes de coordonnées couramment utilisés en Alsace est la suivante :
 RGF93 – Lambert 93 (EPSG:#)
 RGF93 – Lambert 93 CC48 (EPSG:#)
 RGF93 – Lambert 93 CC49 (EPSG:#)
@@ -984,12 +984,12 @@ WGS84 – 3D (EPSG:4979)
 ## Recommandations
 Toutes les données échangeables devraient être disponibles au moins en projection Lambert 93. Pour l’Alsace, la projection locale Lambert 93 CC48 (zone 9) est privilégiée.
 
-Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage de la projection le cas échéant et son code EPSG.
+Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage du système de coordonnées le cas échéant et son code EPSG.
 
-Pour la France, la liste des systèmes de projection et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
+Pour la France, la liste des systèmes de coordonnées et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
 
 ## Exemples
-Système de projection : « RGF93 – Lambert 93 CC48 (EPSG:#) »
+Système de coordonnées : « RGF93 – Lambert 93 CC48 (EPSG:#) »
 
 <!-- End @data_referencesystems.md -->
 

@@ -1,6 +1,6 @@
 # Répertoire ``config/models``
 
-Un modèle est un ensemble d'informations permettant de pré-remplir une fiche de métadonnées avec des éléments régulièrement utilisées (contact, emprise, système de projection, ect.).
+Un modèle est un ensemble d'informations permettant de pré-remplir une fiche de métadonnées avec des éléments régulièrement utilisées (contact, emprise, système de coordonnées, ect.).
 Il agit sur le contenu de la fiche et non la mise en page qui elle est gérée par les [``vues``](https://github.com/cigalsace/mdedit/tree/master/config/views).
 Pour un affichage correct dans mdEdit, un modèle doit contenir l'ensemble des champs de la fiche en le définissant à la valeur nulle si nécessaire.  
 Un fichier de modèle se présente sous la forme d'un fichier JSON.

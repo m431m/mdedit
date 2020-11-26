@@ -119,6 +119,12 @@ function checkValuesSrv(AppDataSrv) {
                     // var list = AppDataSrv.codelists[listname];
                     for (var option in list) {
                         var id = list[option].id;
+
+                        // m431m added the lines below because it crashes
+                        if (!list[option].search) {
+                          continue;
+                        }
+
                         var search = list[option].search.toLowerCase();
                         if (code.toLowerCase()
                             .indexOf(search) > -1) {

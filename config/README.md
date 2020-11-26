@@ -19,7 +19,7 @@ Ce fichier permet de définir plusieurs variables générales de l'application:
     "models_file": "config/models/models.json",                         // Chemin vers la liste des modèles
     "locales_path": "config/locales/",                                  // Chemin vers la liste des traductions
     "geographicextents_list": "config/list_geographicextents.json",     // Chemin vers la liste des emprises géographiques
-    "referencesystems_list": "config/list_referencesystems.json"        // Chemin vers la liste des systèmes de projection
+    "referencesystems_list": "config/list_referencesystems.json"        // Chemin vers la liste des systèmes de coordonnées
 }
 ```
 

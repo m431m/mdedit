@@ -1,10 +1,10 @@
 
 <!-- Begin @dataReferenceSystems.md -->
 
-# Système de projection
+# Système de coordonnées
 ## Définition
-Information qui indique le ou les systèmes de projections dans lesquels sont disponibles la donnée décrite.
-La liste des systèmes de projection couramment utilisés en Alsace est la suivante :
+Information qui indique le ou les systèmes de coordonnées dans lesquels sont disponibles la donnée décrite.
+La liste des systèmes de coordonnées couramment utilisés en Alsace est la suivante :
 - RGF93 – Lambert 93 (EPSG:2154)
 - RGF93 – Lambert 93 CC48 (EPSG:3948)
 - RGF93 – Lambert 93 CC49 (EPSG:3949)
@@ -18,12 +18,12 @@ La liste des systèmes de projection couramment utilisés en Alsace est la suiva
 ## Recommandations
 Toutes les données échangeables devraient être disponibles au moins en projection Lambert 93. Pour l’Alsace, la projection locale Lambert 93 CC48 (zone 9) est privilégiée.
 
-Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage de la projection le cas échéant et son code EPSG.
+Il est recommandé d’indiquer le système géodésique utilisé (datum), le nom habituel d’usage du système de coordonnées le cas échéant et son code EPSG.
 
-Pour la France, la liste des systèmes de projection et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
+Pour la France, la liste des systèmes de coordonnées et des codes EPSG peut être consultée en suivant le lien : http://georezo.net/wiki/main/dico/epsg.
 
 ## Exemples
-Système de projection : « RGF93 – Lambert 93 CC48 (EPSG:#) »
+Système de coordonnées : « RGF93 – Lambert 93 CC48 (EPSG:#) »
 
 <!-- End @dataReferenceSystems.md -->
 
